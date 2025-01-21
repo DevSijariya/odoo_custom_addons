@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!-- Creating the root tab for the record  containing in the list/Tree form -->
+    <record id="student_tree_view" model="ir.ui.view">
+        <field name="name">student.tree.view</field>
+        <field name="model">students</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name = "name"></field>
+                <field name = "Age"></field>
+                <field name = "dob"></field>
+
+            </list>
+        </field>
+    </record> 
+<!-- Creating the root tab for the record  containing in the form form -->
+    
+    <record id="student_form_view" model="ir.ui.view">
+        <field name="name">student.form.view</field>
+        <field name="model">students</field>
+        <field name="arch" type="xml">
+            <form>
+                <strong>Name : <field name = "name"></field></strong>
+                <field name = "Age"></field>
+                <field name = "dob"></field>
+
+            </form>
+        </field>
+    </record>
+
+<!-- Creating the Action tab -->
+    <record id ="student_view_list" model="ir.actions.act_window">
+        <field name="name">User Detail</field>
+        <field name="res_model">students</field>
+        <field name="view_mode">list</field>
+
+    </record>
+     <record id ="student_view_form" model="ir.actions.act_window">
+        <field name="name">User Detail</field>
+        <field name="res_model">students</field>
+        <field name="view_mode">form</field>
+
+    </record>
+
+<!-- Creating the menuitem tab -->
+
+    <menuitem id="student_details_info" name="Student_list_view" action="student_view_list" sequence="1"/>
+    <menuitem id="student_details_list" name="Student_form_view" action="student_view_form" sequence="2"/>
+</odoo>
