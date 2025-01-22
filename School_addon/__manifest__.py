@@ -10,7 +10,9 @@
     # data files always loaded at installation
     # xml file and security file are imported in data
     'data': [
-        'views/school_views.xml', 
+        'views/student_views.xml', 
+        'views/teacher_views.xml',
+        'views/temporary_view.xml',
         'security/ir.model.access.csv',
     ],
     # data files containing optionally loaded demonstration data
@@ -18,6 +20,5 @@
         # 'demo/demo_data.xml',
     ],
     'installable':'True',
-    'license' : 'LGPL-3',
     'application':'False',
 }

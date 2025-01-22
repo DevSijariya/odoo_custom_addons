@@ -1,0 +1,22 @@
+<odoo>
+    <record id="temporary_data_list_view" model="ir.ui.view">
+    <field name="name">temporary.data.list.view</field>    
+    <field name="model">temporary.data</field> 
+    <field name="arch" type="xml">
+    <list>
+        <field name="u_id"></field>
+    </list>
+    </field>   
+
+    </record>
+    
+    <record id ="temporary_data_action" model="ir.actions.act_window">
+        <field name="name">Temporary Data</field>
+        <field name="model">temporary.data</field>
+        <field name="view_mode">list</field>
+    </record>    
+
+
+    <menuitem id='temp' name="Transient_Model_data" action="temporary_data_action" parent="school_details" sequence="30"/>
+
+</odoo>
