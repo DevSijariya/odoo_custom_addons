@@ -1,24 +1,20 @@
 {
-    'name': "school",
+    'name': "Sales",
     'version': '18.0',
-    'depends': ['base'],
+    'depends': ['base','sale'],
     'author': "My Company",
     'category': 'Uncategorized',
     'description': """
-    This is the custom school model contain teacher and student information 
+    This is the custom sales model which extending the existing sale functionality 
     """,
     # data files always loaded at installation
     # xml file and security file are imported in data
     'data': [
-        'views/student_views.xml', 
-        'views/teacher_views.xml',
-        'views/temporary_view.xml',
         'security/ir.model.access.csv',
+        'views/sales_views.xml'
     ],
     # data files containing optionally loaded demonstration data
-    'demo': [
-        # 'demo/demo_data.xml',
-    ],
+
     'installable':True,
     'application':True,
 }

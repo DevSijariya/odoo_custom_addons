@@ -13,41 +13,20 @@ class CommonDetails(models.AbstractModel):
 
     name = fields.Char("Name")
     age = fields.Integer("Age")
-    dob = fields.Date("Date of Birth")
-
-class StudentDetail(models.Model):
-    """
-    Description: Student Class which is used to store student information
-    """
-    _name = "student.information" # Set the name of the new model
-    _description = "This Model is used to store the information of the student "
-    _inherit = "common.details" #Inherit the Abstract model
-
-    roll_number = fields.Integer("Roll Number")
-    branch = fields.Char("Branch")
-    admission_date=fields.Date('Admission Date')
-    leaving_date=fields.Date('leaving Date')
+    # dob = fields.Date("Date of Birth")
+    date_of_birth = fields.Date("Date of Birth")
 
 
-class TeacherDetail(models.Model):
-    """
-    Description: Student Class which is used to store Teacher information
-    """
-    _name = "teacher.information" # Set the name of the new model
-    _description = "This model is used to store the information of the teacher"
-    _inherit = 'common.details' # Inherit the Abstract model
-
-    subject = fields.Char("Subject")
-    salary=fields.Integer("Salary")
 
 
-class TemporaryData(models.TransientModel):
-    """
-    Description : Creating the Temporary  Transient Model
-    """
 
-    _name = "temporary.data"
-    _description = "Creating the temporay model"
+class TransientMode(models.TransientModel):
+    _name = 'transient.mode'
 
-    
-    u_id=fields.Integer("Id")
+    boolean = fields.Boolean()
+    integer = fields.Integer()
+    float = fields.Float()
+    char = fields.Char()
+    selection = fields.Selection([('one', 'One'), ('two', 'Two')])
+    partner = fields.Many2one('res.partner')
+

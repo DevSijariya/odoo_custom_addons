@@ -1,21 +1,34 @@
 <odoo>
-    <record id="temporary_data_list_view" model="ir.ui.view">
-    <field name="name">temporary.data.list.view</field>    
-    <field name="model">temporary.data</field> 
-    <field name="arch" type="xml">
-    <list>
-        <field name="u_id"></field>
-    </list>
-    </field>   
-
+    <data>
+    
+    <record id="transient_mode_list_view" model="ir.ui.view">
+        <field name="name">transient.mode.list.view</field>    
+        <field name="model">transient.mode</field> 
+        <field name="arch" type="xml">
+            <list>
+            <group>
+                <field name="boolean"></field>
+                <field name="integer"></field>
+                <field name="float"></field>
+                <field name="char"></field>
+                <field name="selection"></field>
+                <field name="partner"></field>
+            </group>
+            </list>
+        </field>   
     </record>
     
+
+
     <record id ="temporary_data_action" model="ir.actions.act_window">
         <field name="name">Temporary Data</field>
-        <field name="model">temporary.data</field>
+        <field name="res_model">transient.mode</field>
         <field name="view_mode">list</field>
     </record>    
 
+
+
+    </data>
 
     <menuitem id='temp' name="Transient_Model_data" action="temporary_data_action" parent="school_details" sequence="30"/>
 
